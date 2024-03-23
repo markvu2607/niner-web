@@ -1,0 +1,56 @@
+version: "3"
+
+tasks:
+  ### local
+  local:up: # Start the development docker container.
+    cmds:
+      - bun --bun run dev
+
+  # ### development
+  # dev:up: # Start the development docker container.
+  #   cmds:
+  #     - docker compose -f docker/development/docker-compose.yml up
+
+  # dev:exec-it: # Interact with container.
+  #   cmds:
+  #     - docker container exec -it niner-web-dev sh
+
+  # dev:exec: # Execute command in container.
+  #   cmds:
+  #     - docker container exec niner-web-dev {{.C}}
+  #   requires:
+  #     vars: [C]
+
+  # dev:down: # Stop the development docker container.
+  #   cmds:
+  #     - docker compose -f docker/development/docker-compose.yml down
+
+  # dev:clear: # Stop and remove images and volumes the development docker container.
+  #   cmds:
+  #     - docker compose -f docker/development/docker-compose.yml down --rmi all --volumes
+
+  ### production
+  pro:up: # Start the production docker container.
+    cmds:
+      - docker compose -f docker/production/docker-compose.yml up
+
+  pro:down: # Stop the production docker container.
+    cmds:
+      - docker compose -f docker/production/docker-compose.yml down
+
+  pro:clear: # Stop and remove images and volumes the production docker container.
+    cmds:
+      - docker compose -f docker/production/docker-compose.yml down --rmi all --volumes
+
+  ### Manage lib
+  lib:install: # Install libs
+    cmds:
+      - bun install
+
+  lib:check-update: # Checking libs outdate
+    cmds:
+      - bunx npm-check-updates
+
+  lib:update-all: # Update lib
+    cmds:
+      - bunx npm-check-updates -u && bun install

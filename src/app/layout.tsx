@@ -3,7 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
 
-import theme from "@/theme";
+import theme from "@/configs/theme";
 
 export const metadata: Metadata = {
   title: "Niner",

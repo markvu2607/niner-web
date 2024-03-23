@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  niner-web-pro:
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+    image: niner-web-pro
+    container_name: niner-web-pro
+    ports:
+      - 3000:3000
