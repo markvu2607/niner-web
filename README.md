@@ -1,10 +1,10 @@
 ## Niner
 
-Niner is a social network platform for book reader.
+Niner is a social network platform for book readers.
 
 ## Technology
 
-- [Nextjs](https://nextjs.org/)
+- [Next.js](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Material UI](https://mui.com/)
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
