@@ -19,8 +19,8 @@ Niner is a social network platform for book reader.
 
 ## Getting Started
 
-- Start dev:
+- Start local:
 
 ```bash
-bun run dev
+task local:up
 ```
