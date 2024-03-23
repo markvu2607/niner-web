@@ -1,5 +1,11 @@
 ## Contributing
 
+- Prepare husky for enable git hooks:
+
+```bash
+bun run prepare
+```
+
 - Issue name template: `<issue_type>: <name_of_issue>`:
 
   - `<issue_type>`: feat, docs, fix, refactor, chore, revert,...
