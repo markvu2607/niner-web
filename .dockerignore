@@ -8,3 +8,4 @@ README.md
 Taskfile.yml
 .husky
 .vscode
+.env.example
