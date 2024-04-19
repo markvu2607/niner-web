@@ -1,0 +1,33 @@
+version: "3"
+
+tasks:
+  ### local
+  local:up: # Start the development docker container.
+    cmds:
+      - npm run dev
+
+  ### production
+  prod:up: # Start the production docker container.
+    cmds:
+      - docker compose -f docker/production/docker-compose.yml up
+
+  prod:down: # Stop the production docker container.
+    cmds:
+      - docker compose -f docker/production/docker-compose.yml down
+
+  prod:clear: # Stop and remove images and volumes the production docker container.
+    cmds:
+      - docker compose -f docker/production/docker-compose.yml down --rmi all --volumes
+
+  ### Manage lib
+  lib:i: # Install libs
+    cmds:
+      - npm install
+
+  lib:ncu: # Checking libs outdate
+    cmds:
+      - npx npm-check-updates
+
+  lib:ncu-u: # Update lib
+    cmds:
+      - npx npm-check-updates -u && npm install
