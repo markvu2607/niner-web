@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { ModeToggle } from "@/components/ModeToggle";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import "@/styles/globals.css";
 import { cn } from "@/utils";
@@ -32,7 +31,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ModeToggle />
           {children}
         </ThemeProvider>
       </body>

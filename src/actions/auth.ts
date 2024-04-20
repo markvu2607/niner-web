@@ -34,3 +34,12 @@ export const login = async (formValues: LoginRequest) => {
 
   redirect("/");
 };
+
+export const logout = async () => {
+  const cookieStore = cookies();
+  cookieStore.delete("accessToken");
+  cookieStore.delete("refreshToken");
+  cookieStore.delete("user");
+
+  redirect("/login");
+};
