@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { ModeToggle } from "@/components/ModeToggle";
-import { InternationalProvider } from "@/providers/InternationalProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import "@/styles/globals.css";
 import { cn } from "@/utils";
@@ -16,13 +15,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
 }>) {
   return (
-    <html lang={locale}>
+    <html lang="en">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -35,10 +32,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <InternationalProvider>
-            <ModeToggle />
-            {children}
-          </InternationalProvider>
+          <ModeToggle />
+          {children}
         </ThemeProvider>
       </body>
     </html>
